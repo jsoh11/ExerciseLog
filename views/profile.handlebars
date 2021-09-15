@@ -6,20 +6,24 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
+    <h3>Create a New Exercise Log:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-exercise-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="exercise-name">Exercise name:</label>
+        <input class="form-input" type="text" id="exercise-name" name="exercise-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="exercise-distance">What was your distance?:</label>
+        <input class="form-input" type="number" id="exercise-distance" name="exercise-distance" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="exercise-time">How long was your workout?:</label>
+        <input class="form-input" type="number" id="exercise-time" name="exercise-time" />
+      </div>
+      <div class="form-group">
+        <label for="exercise-desc">Tell the world about it!</label>
+        <textarea class="form-input" id="exercise-desc" name="exercise-desc"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -27,17 +31,17 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if exercises.length}}
+  <div class="col-md-6 exercise-list">
+    <h3>Current exercises:</h3>
 
-    {{#each projects as |project|}}
+    {{#each exercises as |exercise|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/exercise/{{exercise.id}}">{{exercise.name}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{exercise.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
