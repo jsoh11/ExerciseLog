@@ -1,23 +1,18 @@
 <!-- Loop over each object in the projects array -->
 {{#each exercises as |exercise|}}
-<div class="columns">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      <a href="/exercise/{{exercise.id}}">{{exercise.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount project.needed_funding}}</span>
-      needed!
-    </p>
-    <p>Created by {{exercise.user.name}} on {{format_date exercise.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{exercise.description}}
-    </p>
+<div class="tile is-ancestor">
+  <div class="tile is-4 is-vertical box">
+    <div class = "tile is-child">
+      <a href="/exercise/{{exercise.id}}">{{exercise.title}}</a>
+      <p>Created by {{exercise.user.name}} on {{format_date exercise.date_created}}</p>
+      <p>Distance: {{exercise.distance}} miles</p>
+      <p>Time: {{exercise.time}} hours</p>
+    </div>
+    <div class = "tile is-child">
+      <p>
+        {{exercise.description}}
+      </p>
+    </div> 
   </div>
 </div>
 {{/each}}
