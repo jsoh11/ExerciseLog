@@ -7,34 +7,51 @@
   <title>Exercise Log</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/public/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">Exercise Log!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
+  <div>
+    <nav class="navbar has-background-primary" role="navigation" aria-label="main-navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item has-text-white" href="/">
+        <h1>Exercise Log!</h1>
+        </a>
+        <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false" onclick="toggleBurger()">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu has-background-primary" id="navbar-menu">
+        <div class="navbar-start">
+          {{#if logged_in}}
+          <input class="navbar-item input is-primary is-medium" type="text" placeholder="Search...">
+          {{/if}}
+        </div>
+        <div class="navbar-end">
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+          <a class="navbar-item has-text-white" href="/">dashboard</a>
+          <a class="navbar-item has-text-white" href="/profile">profile</a>
+          <a class="navbar-item has-text-white" id="logout">logout</a>
+          {{else}}
+          <a class="navbar-item" href="/login">login</a>
+          {{/if}}
+        </div>
+      </div>
+    </nav>
+    <main>
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      
+    <footer class="footer has-background-primary">
+      <div class="content has-text-centered has-text-white">
+        <p>Copyright © 2021 Eric, Prany, Jordan, Guled. All rights reserved.</p>
+      </div>
     </footer>
   </div>
-
+  <script src="/js/navbar.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
