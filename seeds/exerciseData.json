@@ -1,0 +1,20 @@
+[
+    {
+        "activity_name": "Hike",
+        "distance": 8.0,
+        "time": 5.0,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque felis mi, id vestibulum dolor molestie convallis. Donec ac consequat lorem, a mollis tellus. Proin lectus urna, molestie sit amet metus eget, scelerisque rutrum nibh. Sed nisi velit, imperdiet non diam id, pellentesque porta ligula. Curabitur dictum quam ac tellus tincidunt, vel dapibus velit accumsan. Integer laoreet vel tellus ut imperdiet. Sed augue lectus, suscipit vel ullamcorper sed, cursus vitae urna."
+    },
+    {
+        "activity_name": "Swim",
+        "distance": 1.0,
+        "time": 1.0,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque felis mi, id vestibulum dolor molestie convallis. Donec ac consequat lorem, a mollis tellus. Proin lectus urna, molestie sit amet metus eget, scelerisque rutrum nibh. Sed nisi velit, imperdiet non diam id, pellentesque porta ligula. Curabitur dictum quam ac tellus tincidunt, vel dapibus velit accumsan. Integer laoreet vel tellus ut imperdiet. Sed augue lectus, suscipit vel ullamcorper sed, cursus vitae urna."
+    },
+    {
+        "activity_name": "Run",
+        "distance": 5.0,
+        "time": 0.50,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque felis mi, id vestibulum dolor molestie convallis. Donec ac consequat lorem, a mollis tellus. Proin lectus urna, molestie sit amet metus eget, scelerisque rutrum nibh. Sed nisi velit, imperdiet non diam id, pellentesque porta ligula. Curabitur dictum quam ac tellus tincidunt, vel dapibus velit accumsan. Integer laoreet vel tellus ut imperdiet. Sed augue lectus, suscipit vel ullamcorper sed, cursus vitae urna."
+    }
+]
