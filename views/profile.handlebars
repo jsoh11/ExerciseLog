@@ -1,35 +1,49 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+
+<div class="columns">
+  <div class="column  is-one-third ">
+    <article class="panel is-primary">
+  <p class="panel-heading">
+    Welcome, {{name}}!
+  </p>
+  <div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+    </figure>
   </div>
 </div>
+  <a class="panel-block is-active">
+    <span class="panel-icon">
+      <i class="fas fa-book" aria-hidden="true"></i>
+    </span>
+    Distance: {{distance}}
+  </a>
+  <a class="panel-block">
+    <span class="panel-icon">
+      <i class="fas fa-book" aria-hidden="true"></i>
+    </span>
+    Time:
+  </a>
+  <a class="panel-block">
+    <span class="panel-icon">
+      <i class="fas fa-book" aria-hidden="true"></i>
+    </span>
+    Bio:
+  </a>
+  <a class="panel-block">
+    <span class="panel-icon">
+      <i class="fas fa-book" aria-hidden="true"></i>
+    </span>
+    jgthms.github.io
+  </a>
+</article>
+  <div class="column is-two-third"></div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Exercise Log:</h3>
+</div>
 
-    <form class="form new-exercise-form">
-      <div class="form-group">
-        <label for="exercise-name">Exercise name:</label>
-        <input class="form-input" type="text" id="exercise-name" name="exercise-name" />
-      </div>
-      <div class="form-group">
-        <label for="exercise-distance">What was your distance?:</label>
-        <input class="form-input" type="number" id="exercise-distance" name="exercise-distance" />
-      </div>
-      <div class="form-group">
-        <label for="exercise-time">How long was your workout?:</label>
-        <input class="form-input" type="number" id="exercise-time" name="exercise-time" />
-      </div>
-      <div class="form-group">
-        <label for="exercise-desc">Tell the world about it!</label>
-        <textarea class="form-input" id="exercise-desc" name="exercise-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
+
+
+</div>
 
   {{#if exercises.length}}
   <div class="col-md-6 exercise-list">
