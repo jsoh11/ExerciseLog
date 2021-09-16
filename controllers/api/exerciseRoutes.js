@@ -3,10 +3,12 @@ const { Exercise } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
-    const exerciseData = await Exercise.findAll();
-    const exercises = exerciseData.map(exercise => exercise.get({ plain: true }));
-    res.json(exercises);
-  });
+  const exerciseData = await Exercise.findAll();
+  const exercises = exerciseData.map((exercise) =>
+    exercise.get({ plain: true })
+  );
+  res.json(exercises);
+});
 
 router.post('/', withAuth, async (req, res) => {
   try {
@@ -17,6 +19,7 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newExercise);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });
