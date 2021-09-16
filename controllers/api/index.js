@@ -4,7 +4,7 @@ const exerciseRoutes = require('./exerciseRoutes');
 
 const userRoutes = require('./userRoutes');
 
-router.use('/exercises', exerciseRoutes);
+router.use('/exercise', exerciseRoutes);
 
 router.use('/users', userRoutes);
 

@@ -1,42 +1,54 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
+<div class="columns">
+<div class="column">
+<form class="section login-form">
+  <h1 class="is-size-3">Login</h1>
+  <div class="field">
+  <p class="control">
+    <input class="input" type="email" placeholder="Email" id="email-login">
+  </p>
+</div>
+<div class="field">
+  <p class="control">
+    <input class="input" type="password" placeholder="Password" id="password-login">
+  </p>
+</div>
+<div class="field">
+  <p class="control">
+    <button class="button is-success">
+      Login
+    </button>
+  </p>
+</div>
+</form>
+</div>
+<div class="column">
+<form class="section signup-form">
+  <h1 class="is-size-3">Sign up</h1>
+<div class="field">
+  
+  <div class="control">
+    <input class="input" type="text" placeholder="First name" id="name-signup">
   </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
+</div>
+<div class="field">
+  
+  <div class="control">
+    <input class="input" type="email" placeholder="Email input" id="email-signup">
   </div>
 </div>
 
+<div class="field">
+  <p class="control">
+    <input class="input" type="password" placeholder="Password" id="password-signup">
+  </p>
+</div>
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>
+</div>
+</form>
+</div>
+</div>
 <script src="./js/login.js"></script>
