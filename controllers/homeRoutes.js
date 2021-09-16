@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Exercise, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all exercises and JOIN with user data
     const exerciseData = await Exercise.findAll({
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/exercise/:id', async (req, res) => {
+router.get('/exercise/:id', withAuth, async (req, res) => {
   try {
     const exerciseData = await Exercise.findByPk(req.params.id, {
       include: [
