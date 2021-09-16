@@ -32,6 +32,7 @@
         <div class="navbar-end">
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
+          <a class="navbar-item has-text-white" id="create-btn">Create Post</a>
           <a class="navbar-item has-text-white" href="/">dashboard</a>
           <a class="navbar-item has-text-white" href="/profile">profile</a>
           <a class="navbar-item has-text-white" id="logout">logout</a>
@@ -41,6 +42,51 @@
         </div>
       </div>
     </nav>
+    {{!-- modal --}}
+    <div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Tell us about your workout!</p>
+      <button class="delete" id="delete-btn" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+     <form>
+       <div class="field">
+  <label class="label">What did you do?</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">How far did you go?</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">How long did you work out for?</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Text input">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Tell us about it!</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Textarea"></textarea>
+  </div>
+</div>
+     </form>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button" id="cancel-btn">Cancel</button>
+    </footer>
+  </div>
+</div>
     <main>
       <!-- Render the sub layout -->
       {{{ body }}}
@@ -51,6 +97,7 @@
       </div>
     </footer>
   </div>
+  <script src="/js/modal.js"></script>
   <script src="/js/navbar.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
