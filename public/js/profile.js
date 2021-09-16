@@ -2,12 +2,14 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#exercise-name').value.trim();
+  const distance = document.querySelector('#exercise-distance').value.trim();
+  const time = document.querySelector('#exercise-time').value.trim();
   const description = document.querySelector('#exercise-desc').value.trim();
 
-  if (name && description) {
-    const response = await fetch(`/api/exercise`, {
+  if (name && distance && time && description) {
+    const response = await fetch(`/api/exercises`, {
       method: 'POST',
-      body: JSON.stringify({ name, description }),
+      body: JSON.stringify({ name, distance, time, description }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -25,7 +27,7 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/exercise/${id}`, {
+    const response = await fetch(`/api/exercises/${id}`, {
       method: 'DELETE',
     });
 
@@ -41,6 +43,6 @@ document
   .querySelector('.new-exercise-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.exercise-list')
-  .addEventListener('click', delButtonHandler);
+// document
+//   .querySelector('.exercise-list')
+//   //.addEventListener('click', delButtonHandler);
