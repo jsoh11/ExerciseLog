@@ -1,21 +1,18 @@
 [
     {
-        "title": "Morning Hike",
-        "activity_name": "Hike",
+        "name": "Morning Hike",
         "distance": 8.0,
         "time": 5.0,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque felis mi."
     },
     {
-        "title": "Morning Hike",
-        "activity_name": "Swim",
+        "name": "Morning Hike",
         "distance": 1.0,
         "time": 1.0,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque felis mi."
     },
     {
-        "title": "Morning Hike",
-        "activity_name": "Run",
+        "name": "Morning Hike",
         "distance": 5.0,
         "time": 0.50,
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque felis mi."

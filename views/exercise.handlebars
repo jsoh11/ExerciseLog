@@ -1,8 +1,32 @@
-<div class="box">
+{{!-- <div class="box">
   <h2>{{activity_name}}</h2>
   <p>{{time}}</p>
   <p>{{distance}}</p>
   <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-</div>
+  <p>Created by {{exercise.user.name}} on {{format_date exercise.date_created}}</p>
+</div> --}}
 
+{{#each exercises as |exercise| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <a href="/project/{{exercise.id}}">{{exercise.user.name}}</a>
+    </h2>
+    <p>Created by {{exercise.user.name}} on {{format_date exercise.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{exercise.name}}
+    </p>
+    <p>
+      {{exercise.time}}
+    </p>
+    <p>
+      {{exercise.distance}}
+    </p>
+    <p>
+      {{exercise.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
