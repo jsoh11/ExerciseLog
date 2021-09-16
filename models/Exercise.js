@@ -11,11 +11,7 @@ Exercise.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    activity_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
