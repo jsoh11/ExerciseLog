@@ -1,6 +1,6 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-
+  console.log("test")
   const name = document.querySelector('#exercise-name').value.trim();
   const distance = document.querySelector('#exercise-distance').value.trim();
   const time = document.querySelector('#exercise-time').value.trim();
