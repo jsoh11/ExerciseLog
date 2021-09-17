@@ -37,14 +37,29 @@ router.get('/exercise/:id', withAuth, async (req, res) => {
         },
       ],
     });
+    const exercisesData = await Exercise.findAll({
+      where: {
+        id: req.params.id,
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
+    // Serialize data so the template can read it
+    const exercises = exercisesData.map((exercise) => exercise.get({ plain: true }));
     const exercise = exerciseData.get({ plain: true });
-
+console.log(exercise);
     res.render('exercise', {
       ...exercise,
+      exercises,
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

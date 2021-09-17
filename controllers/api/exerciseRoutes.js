@@ -18,27 +18,27 @@ router.get('/', async (req, res) => {
   } 
  });
 
- router.get('/', async (req, res) => {
-  try {
-    const exerciseData = await Exercise.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+//  router.get('/exercises', async (req, res) => {
+//   try {
+//     const exerciseData = await Exercise.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
 
-    const exercises = exerciseData.map((exercise) => exercise.get({ plain: true }));
+//     const exercises = exerciseData.map((exercise) => exercise.get({ plain: true }));
 
-    res.render('homepage', { 
-      exercises, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('homepage', { 
+//       exercises, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 router.post('/', withAuth, async (req, res) => {
