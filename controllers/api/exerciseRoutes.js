@@ -2,44 +2,6 @@ const router = require('express').Router();
 const { Exercise, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', async (req, res) => {
-  try {
-    const exerciseData = await Exercise.findAll({include:User});
-    const exercises = exerciseData.map(exercise => exercise.get({ plain: true }));
-   console.log(exercises)
-    res.render('exercise', {
-      exercises,
-      logged_in: req.session.logged_in
-    });
-
-  } catch (err) {
-    console.log(err)
-    res.status(500).json(err);
-  } 
- });
-
-//  router.get('/exercises', async (req, res) => {
-//   try {
-//     const exerciseData = await Exercise.findAll({
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-//     const exercises = exerciseData.map((exercise) => exercise.get({ plain: true }));
-
-//     res.render('homepage', { 
-//       exercises, 
-//       logged_in: req.session.logged_in 
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 
 router.post('/', withAuth, async (req, res) => {
   try {
