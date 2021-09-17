@@ -1,0 +1,82 @@
+<div class='row'>
+  <div class='col-auto'>
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class='section'>
+  <div class='column'>
+    This container is
+    <strong>fluid</strong>: it will have a 32px gap on either side, on any
+    viewport size.
+  </div>
+</div>
+
+<div class='row mt-4'>
+  <div class='col-md-6'>
+    <h3>Create a New Exercise Log:</h3>
+
+    <form class='form new-exercise-form'>
+      <div class='form-group'>
+        <label for='exercise-name'>Exercise name:</label>
+        <input
+          class='form-input'
+          type='text'
+          id='exercise-name'
+          name='exercise-name'
+        />
+      </div>
+      <div class='form-group'>
+        <label for='exercise-distance'>What was your distance?:</label>
+        <input
+          class='form-input'
+          type='number'
+          id='exercise-distance'
+          name='exercise-distance'
+        />
+      </div>
+      <div class='form-group'>
+        <label for='exercise-time'>How long was your workout?:</label>
+        <input
+          class='form-input'
+          type='number'
+          id='exercise-time'
+          name='exercise-time'
+        />
+      </div>
+      <div class='form-group'>
+        <label for='exercise-desc'>Tell the world about it!</label>
+        <textarea
+          class='form-input'
+          id='exercise-desc'
+          name='exercise-desc'
+        ></textarea>
+      </div>
+      <div class='form-group'>
+        <button type='submit' class='btn btn-primary'>Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if exercises.length}}
+    <div class='col-md-6 exercise-list'>
+      <h3>Current exercises:</h3>
+
+      {{#each exercises as |exercise|}}
+        <div class='row mb-2'>
+          <div class='col-md-8'>
+            <h4><a href='/exercise/{{exercise.id}}'>{{exercise.name}}</a></h4>
+          </div>
+          <div class='col-md-4'>
+            <button
+              class='btn btn-sm btn-danger'
+              data-id='{{exercise.id}}'
+            >DELETE</button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
+
+<script src='./js/profile.js'></script>
