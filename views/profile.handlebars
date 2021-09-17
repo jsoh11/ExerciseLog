@@ -1,66 +1,99 @@
+<div class='columns my-3'>
+  <div class='column is-one-third'>
+    <article class='panel is-primary'>
+      <p class='panel-heading'>
+        Welcome,
+        {{name}}!
+      </p>
+      <div class='card'>
+        <div class='card-image'>
+          <figure class='image is-4by3'>
+            <img
+              src='https://bulma.io/images/placeholders/1280x960.png'
+              alt='Placeholder image'
+            />
+          </figure>
+        </div>
+      </div>
+      <a class='panel-block is-active'>
+        <span class='panel-icon'>
+          <i class='fas fa-book' aria-hidden='true'></i>
+        </span>
+        Distance:
+        {{exercise.distance}}
+      </a>
+      <a class='panel-block'>
+        <span class='panel-icon'>
+          <i class='fas fa-book' aria-hidden='true'></i>
+        </span>
+        Time:
+      </a>
+      <article class='message is-small'>
+        <div class='message-header has-background-primary'>
+          <p>Bio</p>
+        </div>
+        <div class='message-body has-background-primary-light'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta
+          nec nulla.Nullam gravida purus diam, et dictum
+          <a>felis venenatis</a>
+          efficitur. Aenean ac
+          <em>eleifend lacus</em>, in mollis lectus.
+        </div>
+      </article>
+    </article>
 
-<div class="columns">
-  <div class="column  is-one-third ">
-    <article class="panel is-primary">
-  <p class="panel-heading">
-    Welcome, {{name}}!
-  </p>
-  <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-    </figure>
   </div>
-</div>
-  <a class="panel-block is-active">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    Distance: {{distance}}
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    Time:
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    Bio:
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    jgthms.github.io
-  </a>
-</article>
-  <div class="column is-two-third"></div>
 
-</div>
+  {{!-- <div class='column'>
+    {{#if exercises.length}}
+      <div class='col-md-6 exercise-list'>
+        <h3>Current exercises:</h3>
 
+        {{#each exercises as |exercise|}}
+          <div class='row mb-2'>
+            <div class='col-md-8'>
+              <h4><a href='/exercise/{{exercise.id}}'>{{exercise.name}}</a></h4>
+            </div>
+            <div class='col-md-4'>
+              <button
+                class='btn btn-sm btn-danger'
+                data-id='{{exercise.id}}'
+              >DELETE</button>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/if}}
+  </div> --}}
+  <!-- Loop over each object in the projects array -->
 
-
-</div>
-
-  {{#if exercises.length}}
-  <div class="col-md-6 exercise-list">
-    <h3>Current exercises:</h3>
-
+  <div class='column'>
     {{#each exercises as |exercise|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/exercise/{{exercise.id}}">{{exercise.name}}</a></h4>
+      <div class='tile is-ancestor'>
+        <div class='tile is-vertical is-9 box has-background-primary my-3'>
+          <div class='tile is-child'>
+            <a href='/exercise/{{exercise.id}}' class='has-text-white'><strong
+              >{{exercise.name}}</strong></a>
+            <p class='has-text-white'>Created by
+              <strong class='has-text-white'>{{exercise.user.name}}</strong>
+              on
+              {{format_date exercise.date_created}}</p>
+            <p class='has-text-white'>Distance:
+              {{exercise.distance}}
+              miles</p>
+            <p class='has-text-white'>Time: {{exercise.time}} hours</p>
+          </div>
+          <div class='tile is-child'>
+            <p class='has-text-white'>
+              {{exercise.description}}
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{exercise.id}}">DELETE</button>
-      </div>
-    </div>
     {{/each}}
   </div>
-  {{/if}}
+
 </div>
 
-<script src="./js/profile.js"></script>
+<script src='./js/profile.js'></script>
