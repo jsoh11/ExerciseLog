@@ -41,7 +41,7 @@ router.get('/exercise/:id', withAuth, async (req, res) => {
     });
     const exercisesData = await Exercise.findAll({
       where: {
-        id: req.params.id,
+        user_id: req.session.user_id,
       },
       include: [
         {

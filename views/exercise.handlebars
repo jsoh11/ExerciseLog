@@ -1,5 +1,5 @@
 <div class="box">
-  <h2>{{activity_name}}</h2>
+  <h2>{{name}}</h2>
   <p>{{time}}</p>
   <p>{{distance}}</p>
   <p>{{description}}</p>
@@ -8,33 +8,30 @@
 
 <div class="section">
   <div class="column">
-  </div>{{#each exercises as |exercise| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <a href="/project/{{exercise.id}}">{{exercise.user.name}}</a>
-    </h2>
-    <p>Created by {{exercise.user.name}} on {{format_date exercise.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{exercise.name}}
-    </p>
-    <p>
-      {{exercise.time}}
-    </p>
-    <p>
-      {{exercise.distance}}
-    </p>
-    <p>
-      {{exercise.description}}
-    </p>
-  </div>
-</div>
-{{/each}}
-</div>
+{{#each exercises as |exercise|}}
+      <div class='tile is-ancestor'>
+        <div class='tile is-vertical is-9 box has-background-primary my-3'>
+          <div class='tile is-child'>
+            <a href='/exercise/{{exercise.id}}' class='has-text-white'><strong
+              >{{exercise.name}}</strong></a>
+            <p class='has-text-white'>Created by
+              <strong class='has-text-white'>{{exercise.user.name}}</strong>
+              on
+              {{format_date exercise.date_created}}</p>
+            <p class='has-text-white'>Distance:
+              {{exercise.distance}}
+              miles</p>
+            <p class='has-text-white'>Time: {{exercise.time}} hours</p>
+          </div>
+          <div class='tile is-child'>
+            <p class='has-text-white'>
+              {{exercise.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+    {{/each}}
 <div class="column">
-  
 </div>
 
 
