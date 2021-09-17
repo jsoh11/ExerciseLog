@@ -1,108 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercise Log</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
-  <link rel="stylesheet" href="/public/css/style.css">
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Exercise Log</title>
+    <link
+      rel='stylesheet'
+      href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'
+    />
+    {{! <link rel="stylesheet" href="/css/jass.css"> }}
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
 
-<body>
-  <div>
-    <nav class="navbar has-background-primary" role="navigation" aria-label="main-navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item has-text-white" href="/">
-        <h1>Exercise Log!</h1>
-        </a>
-        <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false" onclick="toggleBurger()">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div class="navbar-menu has-background-primary" id="navbar-menu">
-        <div class="navbar-start">
-          {{#if logged_in}}
-          <input class="navbar-item input is-primary is-medium" type="text" placeholder="Search...">
-          {{/if}}
+  <body>
+    <div>
+      <nav
+        class='navbar has-background-primary'
+        role='navigation'
+        aria-label='main-navigation'
+      >
+        <div class='navbar-brand'>
+          <a class='navbar-item has-text-white' href='/'>
+            <h1>Exercise Log!</h1>
+          </a>
+          <a
+            role='button'
+            class='navbar-burger burger'
+            id='burger'
+            aria-label='menu'
+            aria-expanded='false'
+            onclick='toggleBurger()'
+          >
+            <span aria-hidden='true'></span>
+            <span aria-hidden='true'></span>
+            <span aria-hidden='true'></span>
+          </a>
         </div>
-        <div class="navbar-end">
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-          <a class="navbar-item has-text-white" id="create-btn">Create Post</a>
-          <a class="navbar-item has-text-white" href="/">dashboard</a>
-          <a class="navbar-item has-text-white" href="/profile">profile</a>
-          <a class="navbar-item has-text-white" id="logout">logout</a>
-          {{else}}
-          <a class="navbar-item" href="/login">login</a>
-          {{/if}}
+        <div class='navbar-menu has-background-primary' id='navbar-menu'>
+          <div class='navbar-start'>
+            {{#if logged_in}}
+              <input
+                class='navbar-item input is-primary is-medium'
+                type='text'
+                placeholder='Search...'
+              />
+            {{/if}}
+          </div>
+          <div class='navbar-end'>
+            <!-- Conditionally render login or logout links -->
+            {{#if logged_in}}
+              <a class='navbar-item has-text-white' id='create-btn'>Create Post</a>
+              <a class='navbar-item has-text-white' href='/'>dashboard</a>
+              <a class='navbar-item has-text-white' href='/profile'>profile</a>
+              <a class='navbar-item has-text-white' id='logout'>logout</a>
+            {{else}}
+              <a class='navbar-item' href='/login'>login</a>
+            {{/if}}
+          </div>
+        </div>
+      </nav>
+      {{! modal }}
+      <div class='modal'>
+        <div class='modal-background'></div>
+        <div class='modal-card'>
+          <header class='modal-card-head'>
+            <p class='modal-card-title'>Tell us about your workout!</p>
+            <button class='delete' id='delete-btn' aria-label='close'></button>
+          </header>
+          <section class='modal-card-body'>
+            <form class='new-exercise-form'>
+              <div class='field'>
+                <label class='label'>What did you do?</label>
+                <div class='control'>
+                  <input
+                    class='input'
+                    id='exercise-name'
+                    type='text'
+                    placeholder='Text input'
+                  />
+                </div>
+              </div>
+
+              <div class='field'>
+                <label class='label'>How far did you go?</label>
+                <div class='control'>
+                  <input
+                    class='input'
+                    id='exercise-distance'
+                    type='text'
+                    placeholder='Text input'
+                  />
+                </div>
+              </div>
+
+              <div class='field'>
+                <label class='label'>How long did you work out for?</label>
+                <div class='control'>
+                  <input
+                    class='input'
+                    id='exercise-time'
+                    type='text'
+                    placeholder='Text input'
+                  />
+                </div>
+              </div>
+
+              <div class='field'>
+                <label class='label'>Tell us about it!</label>
+                <div class='control'>
+                  <textarea
+                    class='textarea'
+                    id='exercise-desc'
+                    placeholder='Textarea'
+                  ></textarea>
+                </div>
+              </div>
+          <footer class='modal-card-foot'>
+            <button class='button is-success' name='submit'>Submit</button>
+            <button class='button' id='cancel-btn'>Cancel</button>
+          </footer>
+            </form>
+          </section>
         </div>
       </div>
-    </nav>
-    {{!-- modal --}}
-    <div class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Tell us about your workout!</p>
-      <button class="delete" id="delete-btn" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-     <form>
-       <div class="field">
-  <label class="label">What did you do?</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Text input">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">How far did you go?</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Text input">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">How long did you work out for?</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Text input">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Tell us about it!</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Textarea"></textarea>
-  </div>
-</div>
-     </form>
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
-      <button class="button" id="cancel-btn">Cancel</button>
-    </footer>
-  </div>
-</div>
-    <main>
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer class="footer has-background-primary">
-      <div class="content has-text-centered has-text-white">
-        <p>Copyright © 2021 Eric, Prany, Jordan, Guled. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-  <script src="/js/modal.js"></script>
-  <script src="/js/navbar.js"></script>
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+      <main>
+        <!-- Render the sub layout -->
+        {{{body}}}
+      </main>
+      <footer class='footer has-background-primary'>
+        <div class='content has-text-centered has-text-white'>
+          <p>Copyright © 2021 Eric, Prany, Jordan, Guled. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <script src='/js/profile.js'></script>
+    <script src='/js/modal.js'></script>
+    <script src='/js/navbar.js'></script>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src='/js/logout.js'></script>
+    {{/if}}
+  </body>
 
 </html>
