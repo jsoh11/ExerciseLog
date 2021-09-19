@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { Exercise, User } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -73,7 +74,23 @@ router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
+      attributes: { exclude: ['password'],
+      include: [
+        [
+          //grabbing user total distance and time from database
+          sequelize.literal(
+            '(SELECT SUM(distance) FROM exercise WHERE exercise.user_id = user.id)'
+          ),
+          'total_distance',
+        ],
+        [
+          sequelize.literal(
+            '(SELECT SUM(time) FROM exercise WHERE exercise.user_id = user.id)'
+          ),
+          'total_time',
+        ],
+      ], 
+    },
       include: [{ model: Exercise }],
     });
     const user = userData.get({ plain: true });
