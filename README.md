@@ -28,8 +28,11 @@
 
 My Workout Log!
 
-![Screenshot]()
+![Screenshot](./assets/login.png)
 
+![Screenshot](./assets/profile.png)
+
+![Screenshot](./assets/modal.png)
 
 ### Built With
 
