@@ -1,6 +1,6 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-  console.log("test")
+  console.log('test');
   const name = document.querySelector('#exercise-name').value.trim();
   const distance = document.querySelector('#exercise-distance').value.trim();
   const time = document.querySelector('#exercise-time').value.trim();
@@ -46,3 +46,18 @@ document
 // document
 //   .querySelector('.exercise-list')
 //   //.addEventListener('click', delButtonHandler);
+
+//Bio Editorial
+const editBtn = document.querySelector('#1');
+
+const bioContainer = document.querySelector('.control');
+
+const displayBio = () => {
+  const bioInput = document.querySelector('#bioText');
+  const bio = bioInput.innerHTML;
+  const bioAdd = document.createElement('p');
+  bioAdd.textContent = bio;
+  bioContainer.appendChild(bioAdd);
+};
+
+editBtn.addEventListener('click', displayBio);
