@@ -1,16 +1,24 @@
-<div class="box">
+<div class="tile">
+
+
+
+<div class="column">
+    <div class="panel-heading">
   <h2>{{name}}</h2>
   <p>{{time}}</p>
   <p>{{distance}}</p>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  </div>
 </div>
 
-<div class="section">
+
+
+  
   <div class="column">
 {{#each exercises as |exercise|}}
       <div class='tile is-ancestor'>
-        <div class='tile is-vertical is-9 box has-background-primary my-3'>
+        <div class='tile is-vertical box has-background-primary my-3'>
           <div class='tile is-child'>
             <a href='/exercise/{{exercise.id}}/user/{{exercise.user_id}} ' class='has-text-white'><strong
               >{{exercise.name}}</strong></a>
@@ -31,7 +39,8 @@
         </div>
       </div>
     {{/each}}
-<div class="column">
 </div>
 
 
+
+</div>
