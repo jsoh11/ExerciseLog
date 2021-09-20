@@ -1,0 +1,76 @@
+:root {
+    --yellow-light: #ADD8E6;
+    --red-medium: #6aa4c8;
+    --red-dark: #A7C7E7;
+}
+
+h1 {
+    color: black
+}
+
+p, a, strong {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+#card-text {
+    color: black;
+}
+
+body {
+    background-color: white
+    
+        
+}
+
+.navbar, .navbar-menu {
+    background-color: var(--red-medium);
+    
+}
+
+.navbar-burger {
+    color: black;
+}
+
+.navbar-item {
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+#home-grid {
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+.exercise-card {
+    background-color: var(--red-medium);
+    
+    
+}
+
+#post-container {
+    padding: 20px;
+    
+}
+
+
+.footer {
+    height: 100px;
+    background-color: var(--red-medium);
+}
+
+.modal-card-head {
+    background-color: var(--red-medium);
+    
+}
+/* profile styling */
+
+.progress {
+    color: var(--yellow-light);
+}
+
+.panel {
+    color: var(--yellow-light);
+}
+

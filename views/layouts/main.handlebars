@@ -8,20 +8,22 @@
       rel='stylesheet'
       href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'
     />
-    {{! <link rel="stylesheet" href="/css/jass.css"> }}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300;500&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/css/style.css' />
   </head>
 
   <body>
     <div>
       <nav
-        class='navbar has-background-primary'
+        class='navbar'
         role='navigation'
         aria-label='main-navigation'
       >
         <div class='navbar-brand'>
-          <a class='navbar-item has-text-white' href='/'>
-            <h1>Exercise Log!</h1>
+          <a class='navbar-item' href='/'>
+            <h1>myWorkoutLog</h1>
           </a>
           <a
             role='button'
@@ -36,14 +38,14 @@
             <span aria-hidden='true'></span>
           </a>
         </div>
-        <div class='navbar-menu has-background-primary' id='navbar-menu'>
+        <div class='navbar-menu' id='navbar-menu'>
           <div class='navbar-end'>
             <!-- Conditionally render login or logout links -->
             {{#if logged_in}}
-              <a class='navbar-item has-text-white' id='create-btn'>Create Post</a>
-              <a class='navbar-item has-text-white' href='/'>dashboard</a>
-              <a class='navbar-item has-text-white' href='/profile'>profile</a>
-              <a class='navbar-item has-text-white' id='logout'>logout</a>
+              <a class='navbar-item' id='create-btn'>create post</a>
+              <a class='navbar-item' href='/'>dashboard</a>
+              <a class='navbar-item' href='/profile'>profile</a>
+              <a class='navbar-item' id='logout'>logout</a>
             {{else}}
               <a class='navbar-item' href='/login'>login</a>
             {{/if}}
@@ -73,7 +75,7 @@
               </div>
 
               <div class='field'>
-                <label class='label'>How far did you go?</label>
+                <label class='label'>How many miles did you go?</label>
                 <div class='control'>
                   <input
                     class='input'
@@ -85,7 +87,7 @@
               </div>
 
               <div class='field'>
-                <label class='label'>How long did you work out for?</label>
+                <label class='label'>How many hours did you work out for?</label>
                 <div class='control'>
                   <input
                     class='input'
@@ -107,18 +109,18 @@
                 </div>
               </div>
           <footer class='modal-card-foot'>
-            <button class='button is-success' name='submit'>Submit</button>
+            <button class='button is-link' name='submit'>Submit</button>
             <button class='button' id='cancel-btn'>Cancel</button>
           </footer>
             </form>
           </section>
         </div>
       </div>
-      <main>
+      <main class="is-flex-wrap-wrap">
         <!-- Render the sub layout -->
         {{{body}}}
       </main>
-      <footer class='footer has-background-primary'>
+      <footer class='footer'>
         <div class='content has-text-centered has-text-white'>
           <p>Copyright © 2021 Eric, Prany, Jordan, Guled. All rights reserved.</p>
         </div>
