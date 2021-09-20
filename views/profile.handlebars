@@ -19,25 +19,58 @@
         <span class='panel-icon'>
           <i class='fas fa-book' aria-hidden='true'></i>
         </span>
-        Distance: <progress class="progress is-small is-primary" value={{total_distance}} max="50">{{total_distance}}</progress> {{total_distance}} miles
+        Distance:
+        <progress
+          class='progress is-small is-primary'
+          value={{total_distance}}
+          max='50'
+        >{{total_distance}}</progress>
+        {{total_distance}}
+        miles
       </a>
       <a class='panel-block'>
         <span class='panel-icon'>
           <i class='fas fa-book' aria-hidden='true'></i>
         </span>
-        Time: <progress class="progress is-small is-primary" value={{total_time}} max="50">{{total_time}}</progress> {{total_time}} total hours
+        Time:
+        <progress
+          class='progress is-small is-primary'
+          value={{total_time}}
+          max='50'
+        >{{total_time}}</progress>
+        {{total_time}}
+        total hours
       </a>
       <article class='message is-small'>
         <div class='message-header has-background-primary'>
           <p>Bio</p>
         </div>
-        <div class='message-body has-background-primary-light'>
+        {{! <div class='message-body has-background-primary-light'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta
           nec nulla.Nullam gravida purus diam, et dictum
           <a>felis venenatis</a>
           efficitur. Aenean ac
           <em>eleifend lacus</em>, in mollis lectus.
+        </div> }}
+        <div>
+          <div class='card-content'>
+            <div class='content'>
+              “Success usually comes to those who are too busy to be looking for
+              it” Gym🏋️Lover😘 Indain Army💂Lover Full body 💪 workout Video
+              status Daily Post Gym 💪 motivation Follow fast
+              <a href='#'>@bulmaio</a>.
+              <a href='#'>#css</a>
+              <a href='#'>#responsive</a>
+              <br />
+              <time datetime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+            </div>
+          </div>
+          <footer class='card-footer'>
+            <a href='#' id='1' class='card-footer-item'>Save</a>
+            <a href='#' id='2' class='card-footer-item'>Edit</a>
+            <a href='#' id='3' class='card-footer-item'>Delete</a>
+          </footer>
         </div>
       </article>
     </article>
