@@ -19,14 +19,13 @@
         <span class='panel-icon'>
           <i class='fas fa-book' aria-hidden='true'></i>
         </span>
-        Distance:
-        {{exercise.distance}}
+        Distance: <progress class="progress is-small is-primary" value={{total_distance}} max="50">{{total_distance}}</progress> {{total_distance}} miles
       </a>
       <a class='panel-block'>
         <span class='panel-icon'>
           <i class='fas fa-book' aria-hidden='true'></i>
         </span>
-        Time:
+        Time: <progress class="progress is-small is-primary" value={{total_time}} max="50">{{total_time}}</progress> {{total_time}} total hours
       </a>
       <article class='message is-small'>
         <div class='message-header has-background-primary'>
