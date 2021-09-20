@@ -1,0 +1,80 @@
+:root {
+    --blue-light: #ADD8E6;
+    --blue-medium: #6aa4c8;
+}
+
+h1 {
+    color: black
+}
+
+p, a, strong {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+#card-text {
+    color: black;
+}
+
+body {
+    background-color: white
+    
+        
+}
+
+.navbar, .navbar-menu {
+    background-color: var(--blue-medium);
+    
+}
+
+.navbar-burger {
+    color: black;
+}
+
+.navbar-item {
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+}
+
+#home-grid {
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+.exercise-card {
+    background-color: var(--blue-medium);
+    
+    
+}
+
+#post-container {
+    padding: 20px;
+    
+}
+
+
+.footer {
+    height: 100px;
+    background-color: var(--blue-medium);
+}
+
+.modal-card-head {
+    background-color: var(--blue-medium);
+    
+}
+/* profile styling */
+
+
+.panel {
+    color: var(--yellow-light);
+}
+
+.panel-heading {
+    background-color: var(--blue-medium);
+}
+
+.message-header {
+    background-color: var(--blue-medium);
+}
+

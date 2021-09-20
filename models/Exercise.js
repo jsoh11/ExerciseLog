@@ -28,7 +28,7 @@ Exercise.init(
       allowNull: false,
     },
     time: {
-      type: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 1),
       allowNull: false,
     },
     user_id: {

@@ -1,6 +1,6 @@
 <div class='columns my-3'>
   <div class='column is-one-third'>
-    <article class='panel is-primary'>
+    <article class='panel'>
       <p class='panel-heading'>
         Welcome,
         {{name}}!
@@ -21,7 +21,7 @@
         </span>
         Distance:
         <progress
-          class='progress is-small is-primary'
+          class='progress is-small is-warning'
           value={{total_distance}}
           max='50'
         >{{total_distance}}</progress>
@@ -34,7 +34,7 @@
         </span>
         Time:
         <progress
-          class='progress is-small is-primary'
+          class='progress is-small is-warning'
           value={{total_time}}
           max='50'
         >{{total_time}}</progress>
@@ -42,7 +42,7 @@
         total hours
       </a>
       <article class='message is-small'>
-        <div class='message-header has-background-primary'>
+        <div class='message-header'>
           <p>Bio</p>
         </div>
         {{! <div class='message-body has-background-primary-light'>
@@ -77,47 +77,25 @@
 
   </div>
 
-  {{!-- <div class='column'>
-    {{#if exercises.length}}
-      <div class='col-md-6 exercise-list'>
-        <h3>Current exercises:</h3>
-
-        {{#each exercises as |exercise|}}
-          <div class='row mb-2'>
-            <div class='col-md-8'>
-              <h4><a href='/exercise/{{exercise.id}}'>{{exercise.name}}</a></h4>
-            </div>
-            <div class='col-md-4'>
-              <button
-                class='btn btn-sm btn-danger'
-                data-id='{{exercise.id}}'
-              >DELETE</button>
-            </div>
-          </div>
-        {{/each}}
-      </div>
-    {{/if}}
-  </div> --}}
-  <!-- Loop over each object in the projects array -->
 
   <div class='column'>
     {{#each exercises as |exercise|}}
       <div class='tile is-ancestor'>
-        <div class='tile is-vertical is-9 box has-background-primary my-3'>
+        <div class='tile is-vertical is-9 box my-3 exercise-card'>
           <div class='tile is-child'>
-            <a href='/exercise/{{exercise.id}}' class='has-text-white'><strong
+            <a href='/exercise/{{exercise.id}}'><strong
               >{{exercise.name}}</strong></a>
-            <p class='has-text-white'>Created by
-              <strong class='has-text-white'>{{exercise.user.name}}</strong>
+            <p>Created by
+              <strong>{{exercise.user.name}}</strong>
               on
               {{format_date exercise.date_created}}</p>
-            <p class='has-text-white'>Distance:
+            <p>Distance:
               {{exercise.distance}}
               miles</p>
-            <p class='has-text-white'>Time: {{exercise.time}} hours</p>
+            <p>Time: {{exercise.time}} hours</p>
           </div>
           <div class='tile is-child'>
-            <p class='has-text-white'>
+            <p>
               {{exercise.description}}
             </p>
           </div>
