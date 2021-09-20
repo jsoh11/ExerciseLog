@@ -1,7 +1,6 @@
 :root {
-    --yellow-light: #ADD8E6;
-    --red-medium: #6aa4c8;
-    --red-dark: #A7C7E7;
+    --blue-light: #ADD8E6;
+    --blue-medium: #6aa4c8;
 }
 
 h1 {
@@ -24,7 +23,7 @@ body {
 }
 
 .navbar, .navbar-menu {
-    background-color: var(--red-medium);
+    background-color: var(--blue-medium);
     
 }
 
@@ -44,7 +43,7 @@ body {
 }
 
 .exercise-card {
-    background-color: var(--red-medium);
+    background-color: var(--blue-medium);
     
     
 }
@@ -57,20 +56,25 @@ body {
 
 .footer {
     height: 100px;
-    background-color: var(--red-medium);
+    background-color: var(--blue-medium);
 }
 
 .modal-card-head {
-    background-color: var(--red-medium);
+    background-color: var(--blue-medium);
     
 }
 /* profile styling */
 
-.progress {
-    color: var(--yellow-light);
-}
 
 .panel {
     color: var(--yellow-light);
+}
+
+.panel-heading {
+    background-color: var(--blue-medium);
+}
+
+.message-header {
+    background-color: var(--blue-medium);
 }
 
